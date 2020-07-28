@@ -1,0 +1,27 @@
+<phpunit
+        bootstrap="tests/bootstrap.php"
+        colors="true"
+        cacheResult="false"
+        testdox="true">
+    <php>
+        <ini name="display_errors" value="true"/>
+        <ini name="error_reporting" value="E_ALL"/>
+    </php>
+    <testsuites>
+        <testsuite name="F8 PHPUnit Testing">
+            <directory suffix="test.php">./</directory>
+            <exclude>./vendor</exclude>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./</directory>
+            <exclude>
+                <directory suffix="test.php">./</directory>
+                <directory>./vendor</directory>
+                <directory>./tests</directory>
+                <file>./f8-phpunit-testing.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>
